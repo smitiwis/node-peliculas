@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/pokemon", (req, res)=>{
-  let body = '';
+  let body = 'asd' ;
 
   // Se escuchae el evento data:
 })
