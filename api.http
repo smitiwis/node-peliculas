@@ -1,0 +1,14 @@
+### Para obtener algo
+GET http://localhost:1234
+
+### Para crear algo
+POST http://localhost:1234
+Content-Type: application/json
+
+{
+    "name": "PIKACHU",
+    "type": "normal",
+    "moves": [
+        "transform"
+    ]
+}
