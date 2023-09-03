@@ -1,14 +1,12 @@
-### Para obtener algo
+### 
 GET http://localhost:1234
 
-### Para crear algo
-POST http://localhost:1234
-Content-Type: application/json
 
-{
-    "name": "PIKACHU",
-    "type": "normal",
-    "moves": [
-        "transform"
-    ]
-}
+### RECUPERAR TODAS LAS PELICULAS
+GET http://localhost:1234/movies
+
+### RECUPERAR UNA PELICULA POR EL ID
+GET http://localhost:1234/movies/1
+
+### RECUPERAR TODAS LAS PELICULAS POR UN GENERO
+GET http://localhost:1234movies?genre= terror

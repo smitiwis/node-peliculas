@@ -80,12 +80,27 @@ MIDEWARE: Es una funcion que se ejecuta antes de que se haga una consulta a la u
             por que si no nunca hara la consulta a la url de la api
 
     ESTRUCTURA DEL MIDEWARE
-    
     app.use((req, res, next)=>{
         console.log("Mi primer mideware);
         ----
         Logica de validacion del request
         ----
-
         next()   // importante no debemos olvidar
     })
+
+  ****************************************************
+  REST API : Es una arquitectura de softwarre
+  PRINCIPIOS                    FUNDAMENTOS
+    * Escalabilidad           * Resource --> En rest todo es un recurso, y cada recurso se identifica con una URL
+    * Simplicidad             * Verbos HTTP --> Son para definir las operaciones que se pueden realizar con los recursos
+    * Visibilidad                               GET, POST, DELETE, etc
+    * Facil de modificar      * Representaciones --> El cliente deberia poder deficir la representacion de los recursos
+    * Fiabilidad                                     JSON, XML, HTML, etc   
+    * Portabilidad            * Stateless --> El cliente debe enviar todas la informacion necesaria para procesar la                                        request
+                              * Interfast uniforme --> 
+                              * Separacion de conceptos --> Permite que el cliente y servidor evolucionen de 
+                                forma esparada
+                               El cliente debe enviar todas la informacion necesaria para procesar
+                                la request
+
+  
