@@ -32,8 +32,8 @@ PATCH  http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
 Content-Type: application/json
 
 {
-    "title": "NUEVO TITULO 2",
-    "director": "NUEVO 123 ",
+    "title": "NUEVO TITULO 1",
+    "director": "NUEVO 12334 ",
     "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
     "genre": [
       "Drama"

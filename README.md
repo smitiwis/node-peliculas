@@ -100,14 +100,14 @@ _ trackear al request a la base de datos
 _ revisar su el usuario tiene las credenciales correctas (cokkies) \* Nunca olvidar escriir al final del mideware: next()
 por que si no nunca hara la consulta a la url de la api
 
-    ESTRUCTURA DEL MIDEWARE
-    app.use((req, res, next)=>{
-        console.log("Mi primer mideware);
-        ----
-        Logica de validacion del request
-        ----
-        next()   // importante no debemos olvidar
-    })
+  ESTRUCTURA DEL MIDEWARE
+  app.use((req, res, next)=>{
+      console.log("Mi primer mideware);
+      ----
+      Logica de validacion del request
+      ----
+      next()   // importante no debemos olvidar
+  })
 
 ---
 
@@ -155,8 +155,7 @@ PROBLEMAS CON COORDS
     "http://movies.com",
   ]
 
-<!-- ojo: Solo se recibe la header('origin') ,  si la peticion  -->
-<!-- es diferente al del servidor -->
+<!-- ojo: Solo se recibe la header('origin') , si la peticion  es diferente al del servidor -->
   const origin = req.header('origin');
     if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
       res.header('Access-Control-Allow-Origin', origin)
@@ -197,3 +196,19 @@ app.use(cords({
     return callback(new Error('Not allowed by CORS'));
   }
 }))
+
+---
+*****************************************************
+  SISTEMA DE MODULOS DE NODEJS (Compartir codigo)
+*****************************************************
+1.- ComonJS (Clásico)
+    require   -->   module.exports
+
+2.- EsModules (Moderno y recomendado)
+    import    -->   export
+
+para usar EsModules
+agregar en el package.json
+--> "type": "module"
+luego: const express = ...require("express");  (Control + .) para transformar todo require en imports
+OJO : para imports y exports en node debemos colocar las extenciones

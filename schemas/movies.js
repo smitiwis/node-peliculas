@@ -1,4 +1,4 @@
-const z = require("zod");
+import z from 'zod'
 
 const moviesSchema = z.object({
   title: z.string({
@@ -30,18 +30,13 @@ const moviesSchema = z.object({
   ),
 });
 
-function validateMovie(object) {
+export function validateMovie(object) {
   return moviesSchema.safeParse(object);
 }
 
-function validatePartialMovie(object) {
+export function validatePartialMovie(object) {
   // "PARTIAL()" --> ESTO SIRVE PARA LA ACTUALIZACION DE DATOS
   // SI BIENE EL DATO VALIDALO, SI NO VIENE EL DATO PUES NO HAGAS NADA
   // DE ESTA MANERA TODAS SON OPCIONALES PERO SI ESTAN LAS VALIDA
   return moviesSchema.partial().safeParse(object);
 }
-
-module.exports = {
-  validatePartialMovie,
-  validateMovie,
-};

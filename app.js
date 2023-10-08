@@ -1,15 +1,22 @@
-const express = require("express");
-const crypto = require("node:crypto");
-const movies = require("./movies.json");
-const cords = require('cors');
-const { validateMovie, validatePartialMovie } = require("./schemas/movies");
+import express, { json } from "express";
+import { randomUUID } from "node:crypto";
+import cors from 'cors';
+import { validateMovie, validatePartialMovie } from "./schemas/movies.js";
+import { readJSON } from "./utils/readJson.js";
+
+// Leer archivos JSON en EsModules --> FORMA 1
+// import fs from 'node:fs';
+// const movies = JSON.parse(fs.readFileSync('./movies.json'));
+
+// Mejor forma de leer archivos JSON --> FORMA 2
+const movies = readJSON('./movies.json')
 
 const app = express();
 app.disable("x-powered-by");
 
 // CON ESTE MIDEWARE PODEMOS ESCUCHAR EL BODY DE LAS PETICIONES
-app.use(express.json());
-app.use(cords({
+app.use(json());
+app.use(cors({
   origin: (origin, callback) => {
     const ACCEPTED_ORIGINS = [
       "http://localhost:8080",
@@ -70,7 +77,7 @@ app.post("/movies", (req, res) => {
   }
 
   const newMovie = {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     // nunca mandar req.body --> no sabemos que nos peude enviar el cliente
     // result.data  --> La data ya esta validada por "ZOD"
     ...result.data,
