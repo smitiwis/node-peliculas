@@ -34,6 +34,14 @@ function validateMovie(object) {
   return moviesSchema.safeParse(object);
 }
 
+function validatePartialMovie(object) {
+  // "PARTIAL()" --> ESTO SIRVE PARA LA ACTUALIZACION DE DATOS
+  // SI BIENE EL DATO VALIDALO, SI NO VIENE EL DATO PUES NO HAGAS NADA
+  // DE ESTA MANERA TODAS SON OPCIONALES PERO SI ESTAN LAS VALIDA
+  return moviesSchema.partial().safeParse(object);
+}
+
 module.exports = {
+  validatePartialMovie,
   validateMovie,
 };
