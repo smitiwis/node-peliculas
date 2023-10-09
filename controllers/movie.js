@@ -40,7 +40,7 @@ export class MovieController {
     if (!result) {
       return res.status(404).json({ message: 'Movie not found' })
     }
-    return req.json({ message: 'Movie deleted' })
+    return res.json({ message: 'Movie deleted' })
   }
 
   static async update(req, res) {
