@@ -175,6 +175,7 @@ app.options('/movies:/id', ()=>{
     }
   res.send(200);
 })
+
 ********************************************************
 AHORA SOLUCIONEMOS COORDS CON LA AYUDA DE UNA LIBRERIA
 ********************************************************
@@ -212,3 +213,5 @@ agregar en el package.json
 --> "type": "module"
 luego: const express = ...require("express");  (Control + .) para transformar todo require en imports
 OJO : para imports y exports en node debemos colocar las extenciones
+
+---

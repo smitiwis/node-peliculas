@@ -8,32 +8,32 @@ GET http://localhost:1234/movies
 GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
 
 ### RECUPERAR TODAS LAS PELICULAS POR UN GENERO
-GET http://localhost:1234/movies?genre=Adventure
+GET http://localhost:1234/movies?genre=Action
 
 ### CREAR UNA PELICULA
 POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
-    "title": "The Shawshank Redemption",
-    "year": 1950,
-    "director": "Frank Darabont",
+    "title": "TNUEVOOOOOOO 3",
+    "year": 2015,
+    "director": "TNUEVOOOOOOO Darabont",
     "duration": 142,
     "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
     "genre": [
       "Drama"
     ],
-    "rate": 9.3
+    "rate": 3
 }
 
 
 ### EDITAR UNA PELICULA
-PATCH  http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+PATCH  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
 Content-Type: application/json
 
 {
-    "title": "NUEVO TITULO 1",
-    "director": "NUEVO 12334 ",
+    "title": "NUEVO NUEVO",
+    "director": "NUEVO 12334",
     "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
     "genre": [
       "Drama"
