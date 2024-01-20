@@ -26,7 +26,6 @@ Content-Type: application/json
     "rate": 3
 }
 
-
 ### EDITAR UNA PELICULA
 PATCH  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
 Content-Type: application/json
@@ -41,3 +40,19 @@ Content-Type: application/json
     "rate": 5,
     "year": 1965
 }
+
+### ELIMINAR UNA PELICULA
+DELETE   http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### ********************************************************
+      # STEAM
+### ********************************************************
+
+# RECUPEARAR DATOS DEL USAURIO POR EL ID DE AMIGOS DE DOTA2
+GET http://localhost:1234/steam/user
+
+### RECUPERAR DATOS DEL USUARIO POR EL ID_STEAM
+GET http://localhost:1234/steam/user
+
+### CREAR SALA DE DOTA 2
+POST http://localhost:1234/steam/create-lobby
