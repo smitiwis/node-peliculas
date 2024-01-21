@@ -3,7 +3,7 @@ import { Router, json } from "express";
 const steamRouter = Router();
 
 // CONSTANTES
-const apiKey = "259B254C049DC2858AD4C5D6E913658F";
+const apiKey = "79223756632168C9584001B21F81D9A0";
 const steamFriendId = "76561199619562954"; 
 const appipdota2 = "570";
 
