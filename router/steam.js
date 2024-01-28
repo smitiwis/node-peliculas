@@ -1,11 +1,19 @@
 import { Router, json } from "express";
+import SteamAuth  from "node-steam-openid";
 
 const steamRouter = Router();
 
 // CONSTANTES
-const apiKey = "79223756632168C9584001B21F81D9A0";
+const apiKey = "82156AA840308B5721397D8C573BAD96"; // con la cuenta de retosdota2
 const steamFriendId = "76561199619562954"; 
 const appipdota2 = "570";
+
+
+const steam = new SteamAuth({
+  realm: "http://localhost:3000/login",     // Site name displayed to users on logon
+  returnUrl: "http://localhost:3000",       // Your return route
+  apiKey: apiKey                             // Steam API key
+});
 
 // ********************************************************
 steamRouter.get("/user", async(req, res) => {
@@ -63,5 +71,22 @@ steamRouter.post("/create-lobby", async(req, res) => {
     });
   }
 });
+
+// ********************************************************
+steamRouter.get("/auth", async (req, res) => {
+  const redirectUrl = await steam.getRedirectUrl();
+  return res.redirect(redirectUrl);
+});
+
+steamRouter.get("/auth/authenticate", async (req, res) => {
+  try {
+    const user = await steam.authenticate(req);
+    console.log("user", user);
+    //...do something with the data
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 
 export default steamRouter;
